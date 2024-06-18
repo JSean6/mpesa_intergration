@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}M-Pesa Payment Solution{% endblock %}</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+    <header class="bg-gray-800 text-white py-6">
+        <div class="container mx-auto flex justify-between items-center">
+            <h1 class="text-3xl font-bold">Your M-Pesa Payment Solution</h1>
+            <nav>
+                <ul class="flex space-x-6">
+                    <li><a href="/" class="hover:text-blue-400">Home</a></li>
+                    <li><a href="#features" class="hover:text-blue-400">Features</a></li>
+                    <li><a href="#how-it-works" class="hover:text-blue-400">How It Works</a></li>
+                    <li><a href="#contact" class="hover:text-blue-400">Contact</a></li>
+                    <li><a href="/stk/" class="hover:text-blue-400">Payments</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        {% block body %}
+        {% endblock %}
+    </main>
+
+    <footer class="bg-gray-800 text-white text-center py-6">
+        <div class="container mx-auto">
+            <p>&copy; 2024 M-Pesa Payment Solution. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,80 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block title %}Home - M-Pesa Payment Solution{% endblock %}
+
+{% block body %}
+<section id="hero" class="bg-blue-500 text-white py-20 text-center">
+    <div class="container mx-auto">
+        <h2 class="text-4xl font-bold mb-4">Seamless M-Pesa Payments Integration</h2>
+        <p class="text-xl mb-6">Fast, secure, and convenient payment solutions for your business.</p>
+        <a href="#contact" class="bg-white text-blue-500 py-2 px-6 rounded hover:bg-gray-100">Get Started</a>
+    </div>
+</section>
+
+<section id="features" class="py-20">
+    <div class="container mx-auto">
+        <h2 class="text-3xl font-bold text-center mb-12">Features</h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div class="text-center">
+                <img src="{% static 'images/feature1.jpg' %}" alt="Feature 1" class="mx-auto mb-4">
+                <h3 class="text-xl font-semibold mb-2">Secure Transactions</h3>
+                <p>Ensure all your transactions are safe and secure.</p>
+            </div>
+            <div class="text-center">
+                <img src="{% static 'images/feature2.jpg' %}" alt="Feature 2" class="mx-auto mb-4">
+                <h3 class="text-xl font-semibold mb-2">Easy Integration</h3>
+                <p>Integrate M-Pesa seamlessly with your existing systems.</p>
+            </div>
+            <div class="text-center">
+                <img src="{% static 'images/feature3.jpg' %}" alt="Feature 3" class="mx-auto mb-4">
+                <h3 class="text-xl font-semibold mb-2">Real-Time Processing</h3>
+                <p>Experience instant payment processing.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="how-it-works" class="bg-gray-100 py-20">
+    <div class="container mx-auto">
+        <h2 class="text-3xl font-bold text-center mb-12">How It Works</h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div class="text-center">
+                <img src="{% static 'images/step1.jpg' %}" alt="Step 1" class="mx-auto mb-4">
+                <h3 class="text-xl font-semibold mb-2">Step 1</h3>
+                <p>Sign up for an account and get your API keys.</p>
+            </div>
+            <div class="text-center">
+                <img src="{% static 'images/step2.jpg' %}" alt="Step 2" class="mx-auto mb-4">
+                <h3 class="text-xl font-semibold mb-2">Step 2</h3>
+                <p>Integrate the API into your application.</p>
+            </div>
+            <div class="text-center">
+                <img src="{% static 'images/step3.jpg' %}" alt="Step 3" class="mx-auto mb-4">
+                <h3 class="text-xl font-semibold mb-2">Step 3</h3>
+                <p>Start processing payments instantly.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="contact" class="py-20">
+    <div class="container mx-auto">
+        <h2 class="text-3xl font-bold text-center mb-12">Contact Us</h2>
+        <form action="{% url 'contact' %}" method="POST" class="max-w-lg mx-auto">
+            {% csrf_token %}
+            <label for="name" class="block text-gray-700 mb-2">Name:</label>
+            <input type="text" id="name" name="name" required class="w-full p-3 mb-4 border rounded">
+
+            <label for="email" class="block text-gray-700 mb-2">Email:</label>
+            <input type="email" id="email" name="email" required class="w-full p-3 mb-4 border rounded">
+
+            <label for="message" class="block text-gray-700 mb-2">Message:</label>
+            <textarea id="message" name="message" rows="4" required class="w-full p-3 mb-4 border rounded"></textarea>
+
+            <button type="submit" class="w-full bg-blue-500 text-white py-3 px-6 rounded hover:bg-blue-600">Send Message</button>
+        </form>
+    </div>
+</section>
+{% endblock %}
